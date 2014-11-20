@@ -10,7 +10,7 @@ download() {
     unzip -q library.zip
     rm library.zip
     PACKAGENAME=$(ls|head -n 1)
-    echo "Installing $PACKAGENAME into xwalk_core_library..."
+    echo "Installing $PACKAGENAME"
     cp -R $PACKAGENAME ../libs
     popd > /dev/null
     rm -r $TMPDIR
