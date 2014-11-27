@@ -33,4 +33,6 @@ Cordova CLI:
 
 Requirements:
 
-`fetch_libs.sh` requires `curl` and `unzip` to be installed, and on the current `PATH`.
+`fetch_libs.sh` requires `curl` and `unzip` to be installed, and on the current `PATH`.  In this case, it also requires that you have the Android SDK installed with the Android Support Library v4, since it will copy the JAR out of the directory so it can be installed by plugman/CLI.
+
+Note: To use the index.html in the www directory, the URI must be changed to resource://android/asset/www/index.html.  This is a relatively minor change, but this is a PoC.

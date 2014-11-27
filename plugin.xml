@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="org.apache.cordova.engine.crosswalk"
+           id="org.apache.cordova.engine.mozillaview"
       version="0.0.1-dev">
 
-    <name>Crosswalk Engine</name>
-    <description>Intel CrossWalk Engine</description>
+    <name>MozillaView Engine</name>
+    <description>Mozilla GeckoView Engine</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,chromium,crosswalk,webview</keywords>
-    <repo>https://github.com/infil00p/cordova-crosswalk-engine.git</repo>
+    <keywords>cordova,firefox,gecko,webview</keywords>
+    <repo>https://github.com/infil00p/cordova-mozillaview-engine.git</repo>
     <issue></issue>
 
     <engines>
@@ -29,18 +29,21 @@
         <source-file src="src/android/CordovaGeckoViewChrome.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
         <source-file src="src/android/CordovaGeckoViewContent.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
 
-        <resource-file src="lib/assets/armeabi-v7a/libfreebl3.so" target="assets/libfreebl3.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libmozalloc.so" target="assets/libmozalloc.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libnss3.so" target="assets/libnss3.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libnssckbi.so" target="assets/libnssckbi.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libomxplugin.so" target="assets/libomxplugin.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libomxplugingb.so" target="assets/libomxplugingb.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libomxplugingb235.so" target="assets/libomxplugingb235.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libomxpluginhc.so" target="assets/libomxpluginhc.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libomxpluginkk.so" target="assets/libomxpluginkk.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libsoftokn3.so" target="assets/libsoftokn3.so" />
-        <resource-file src="lib/assets/armeabi-v7a/libxul.so" target="assets/libxul.so" />
-        <resource-file src="lib/assets/omni.ja" target="assets/omni.ja" />
+        <resource-file src="libs/assets/armeabi-v7a/libfreebl3.so" target="assets/armeabi-v7a/libfreebl3.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libmozalloc.so" target="assets/armeabi-v7a/libmozalloc.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libnss3.so" target="assets/armeabi-v7a/libnss3.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libnssckbi.so" target="assets/armeabi-v7a/libnssckbi.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libomxplugin.so" target="assets/armeabi-v7a/libomxplugin.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libomxplugingb.so" target="assets/armeabi-v7a/libomxplugingb.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libomxplugingb235.so" target="assets/armeabi-v7a/libomxplugingb235.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libomxpluginhc.so" target="assets/armeabi-v7a/libomxpluginhc.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libomxpluginkk.so" target="assets/armeabi-v7a/libomxpluginkk.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libsoftokn3.so" target="assets/armeabi-v7a/libsoftokn3.so" />
+        <resource-file src="libs/assets/armeabi-v7a/libxul.so" target="assets/armeabi-v7a/libxul.so" />
+        <resource-file src="libs/assets/omni.ja" target="assets/omni.ja" />
+
+        <!-- This is a standard Android Support Library -->
+        <resource-file src="libs/android-support-v4.jar" target="libs/android-support-v4.jar" />
 
         <!-- This JS file is totally separate from the JS modules used in Cordova -->
         <resource-file src="www/android/mozilla.js" target="assets/www/bridge/mozilla.js" />
