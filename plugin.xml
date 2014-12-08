@@ -16,7 +16,7 @@
     </engines>
 
     <js-module src="www/MozExec.js" name="MozExec">
-      <clobbers target="cordova.exec" />
+      <uses />
     </js-module>
 
     <!-- android -->
