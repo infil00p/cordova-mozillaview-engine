@@ -1,4 +1,4 @@
-NIGHTLY_PATH="https://ftp.mozilla.org/pub/mozilla.org/mobile/nightly/latest-mozilla-central-android/"
+NIGHTLY_PATH="https://ftp.mozilla.org/pub/mozilla.org/mobile/nightly/latest-mozilla-central-android-api-10/"
 GECKOVIEW_LIBRARY=$NIGHTLY_PATH"geckoview_library.zip"
 GECKOVIEW_ASSETS=$NIGHTLY_PATH"geckoview_assets.zip"
 
