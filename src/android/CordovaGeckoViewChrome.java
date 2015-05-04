@@ -19,17 +19,20 @@ public class CordovaGeckoViewChrome extends GeckoViewChrome {
     
     PluginManager pluginManager;
     NativeToJsMessageQueue jsMessageQueue; //Exists for code re-use, may not be used for a final release
+    CordovaGeckoView webView;
+    CordovaGeckoViewEngine engine;
     
     String LOGTAG = "CordovaGeckoViewChrome";
     
-    CordovaGeckoViewChrome(MozillaView view, CordovaInterface cordova)
+    CordovaGeckoViewChrome(CordovaGeckoViewEngine currentEngine, CordovaInterface cordova)
     {
-        jsMessageQueue = new NativeToJsMessageQueue(view, cordova);
-        pluginManager = view.getPluginManager();
+        engine = currentEngine;
+        jsMessageQueue = engine.nativeToJsMessageQueue;
+        pluginManager = engine.pluginManager;
         //We only do polling
         jsMessageQueue.setBridgeMode(0);
     }
-    
+
     public void onReady(GeckoView view) {
         Log.i(LOGTAG, "Gecko is ready");
 
@@ -56,7 +59,7 @@ public class CordovaGeckoViewChrome extends GeckoViewChrome {
         {
             if(pluginManager == null)
             {
-                pluginManager = ((MozillaView) view).getPluginManager();
+                pluginManager = ((CordovaGeckoView) view).getPluginManager();
             }
             if(pluginManager != null)
             {

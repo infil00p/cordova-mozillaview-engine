@@ -1,0 +1,10 @@
+repositories {
+    maven {
+           url 'https://ci.mozilla.org/job/mozilla-central-geckoview/mozilla-central_Maven_Repository'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:19.+'
+    compile 'org.mozilla.geckoview:library:+'
+}

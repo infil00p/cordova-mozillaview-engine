@@ -22,32 +22,18 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <preference name="webView" value="org.apache.cordova.engine.mozilla.MozillaView" />
+            <preference name="webView" value="org.apache.cordova.engine.mozilla.CordovaGeckoViewEngine" />
         </config-file>
 
-        <source-file src="src/android/MozillaView.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
+        <source-file src="src/android/CordovaGeckoView.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
+        <soruce-file src="src/android/CordovaGeckoViewEngine.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
         <source-file src="src/android/CordovaGeckoViewChrome.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
         <source-file src="src/android/CordovaGeckoViewContent.java" target-dir="src/org/apache/cordova/engine/mozilla/" />
-
-        <resource-file src="libs/assets/armeabi-v7a/libfreebl3.so" target="assets/armeabi-v7a/libfreebl3.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libmozalloc.so" target="assets/armeabi-v7a/libmozalloc.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libnss3.so" target="assets/armeabi-v7a/libnss3.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libnssckbi.so" target="assets/armeabi-v7a/libnssckbi.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libomxplugin.so" target="assets/armeabi-v7a/libomxplugin.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libomxplugingb.so" target="assets/armeabi-v7a/libomxplugingb.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libomxplugingb235.so" target="assets/armeabi-v7a/libomxplugingb235.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libomxpluginhc.so" target="assets/armeabi-v7a/libomxpluginhc.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libomxpluginkk.so" target="assets/armeabi-v7a/libomxpluginkk.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libsoftokn3.so" target="assets/armeabi-v7a/libsoftokn3.so" />
-        <resource-file src="libs/assets/armeabi-v7a/libxul.so" target="assets/armeabi-v7a/libxul.so" />
-        <resource-file src="libs/assets/omni.ja" target="assets/omni.ja" />
-
-        <!-- This is a standard Android Support Library -->
-        <resource-file src="libs/android-support-v4.jar" target="libs/android-support-v4.jar" />
 
         <!-- This JS file is totally separate from the JS modules used in Cordova -->
         <resource-file src="www/android/mozilla.js" target="assets/www/bridge/mozilla.js" />
 
-        <framework src="libs/geckoview_library" custom="true" />
+        <!-- This is the gradle reference.  Apparently this just works now -->
+        <framework src="libs/geckoview/geckoview.gradle" custom="true" type="gradleReference" />
     </platform>
 </plugin>
